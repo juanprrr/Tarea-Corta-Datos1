@@ -1,10 +1,11 @@
 
 
+import java.io.FileNotFoundException;
 import java.sql.SQLException;
 
 public class main {
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, FileNotFoundException {
         Inventario inventarioVehiculos = new Inventario();
 
         Vehiculo v1 = new Vehiculo("Toyota");
@@ -36,8 +37,8 @@ public class main {
 
         inventarioVehiculos.notificador("Notificar vehiculos");
 
-        ConexionRegistroNacional DB = ConexionRegistroNacional.getInstance();
-        DB.getConexion();
+        ValidacionVehiculo valida = new ValidacionVehiculo("Toyota");
+        valida.validar(v1);
 
 
     }
