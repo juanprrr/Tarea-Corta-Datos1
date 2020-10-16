@@ -11,12 +11,7 @@ public class ConexionRegistroNacional {
     private String password = "contrasena";
 
     private ConexionRegistroNacional(){
-        try{
-            Class.forName("driver de la base");
-            this.conexion = DriverManager.getConnection(url, usuario, password);
-        } catch (ClassNotFoundException | SQLException e) {
-            System.out.println("Creación de conexion Fallida: "+ e.getMessage());;
-        }
+        System.out.println("...Tomando datos desde la base del Registro nacional de la propiedad");
     }
 
     public Connection getConexion() {
